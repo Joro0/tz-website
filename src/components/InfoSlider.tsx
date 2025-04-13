@@ -1,19 +1,23 @@
+import IconQuestion from "../assets/icons/icon_question.svg?react";
+import IconMark from "../assets/icons/icon_mark.svg?react";
+import IconMap from "../assets/icons/icon_map.svg?react";
+
 function InfoSlider() {
   const data = [
     {
-      icon: "../assets/icons/icon_question.svg",
+      icon: <IconQuestion />,
       title: "QUIÉNES SOMOS?",
       descp:
         "Empresa tacneña especializada en la producción y suministro de agregados en el sur del Perú.",
     },
     {
-      icon: "../assets/icons/icon_mark.svg",
+      icon: <IconMark />,
       title: "EXPERIENCIA",
       descp:
         "Más de 60 años en el sector nos respaldan, brindando soluciones eficientes y confiables en agregados.",
     },
     {
-      icon: "../assets/icons/icon_map.svg",
+      icon: <IconMap />,
       title: "LOCACIÓN",
       descp:
         "Operamos desde Tacna, gestionando proyectos en Moquegua, Ilo, Nasca y otras localidades del sur.",
@@ -24,7 +28,7 @@ function InfoSlider() {
     <div>
       {data.map((info) => (
         <div>
-          {/*here want to import the svg icon as an element*/}
+          {info.icon}
           <p>{info.title}</p>
           <p>{info.descp}</p>
         </div>

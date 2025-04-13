@@ -1,4 +1,5 @@
 import "./App.css";
+import InfoSlider from "./components/InfoSlider";
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <main id="main-continaer">
         <section id="intro">
           <h1>slogan</h1>
-          <div></div>
+          <InfoSlider />
         </section>
         <section id="servicio"></section>
         <section id="datos"></section>
