@@ -1,3 +1,4 @@
+import "./InfoSlider.css";
 import IconQuestion from "../assets/icons/icon_question.svg?react";
 import IconMark from "../assets/icons/icon_mark.svg?react";
 import IconMap from "../assets/icons/icon_map.svg?react";
@@ -25,7 +26,7 @@ function InfoSlider() {
   ];
 
   return (
-    <div>
+    <div style={{ backgroundColor: "lightgray" }}>
       {data.map((info) => (
         <div>
           {info.icon}
