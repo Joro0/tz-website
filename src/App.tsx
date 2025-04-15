@@ -1,15 +1,13 @@
 import "./App.css";
-import InfoSlider from "./components/InfoSlider";
+
+import IntroSection from "./sections/IntroSection";
 
 function App() {
   return (
     <>
       <header></header>
       <main id="main-container" className="px-4">
-        <section id="intro">
-          <h1>slogan</h1>
-          <InfoSlider />
-        </section>
+        <IntroSection />
         <section id="servicio"></section>
         <section id="datos"></section>
         <section id="clientes"></section>

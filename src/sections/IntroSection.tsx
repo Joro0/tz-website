@@ -1,10 +1,15 @@
-import "./InfoSlider.css";
+import CarouselButtons from "../components/CarouselButtons";
+import CarouselIntro from "../components/CarouselIntro";
 import IconQuestion from "../assets/icons/icon_question.svg?react";
 import IconMark from "../assets/icons/icon_mark.svg?react";
 import IconMap from "../assets/icons/icon_map.svg?react";
 
-function InfoSlider() {
-  const data = [
+import { useState } from "react";
+
+function IntroSection() {
+  const [carPos, setCarPos] = useState(1);
+
+  const dataCarousel = [
     {
       icon: <IconQuestion className="w-6 h-6" />,
       title: "QUIÉNES SOMOS?",
@@ -26,16 +31,12 @@ function InfoSlider() {
   ];
 
   return (
-    <div className="bg-gray-200 w-full flex overflow-hidden border-y-1 border-text-image/30 my-2">
-      {data.map((info) => (
-        <div className="w-full flex flex-col shrink-0 gap-y-1">
-          <div>{info.icon}</div>
-          <p className="text-lg font-bold">{info.title}</p>
-          <p className="text-lg">{info.descp}</p>
-        </div>
-      ))}
-    </div>
+    <section id="intro">
+      <h1>AGREGADOS DE CALIDAD, OBRAS CON SOLIDEZ</h1>
+      <CarouselIntro data={dataCarousel} />
+      <CarouselButtons />
+    </section>
   );
 }
 
-export default InfoSlider;
+export default IntroSection;
