@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <header></header>
-      <main id="main-continaer">
+      <main id="main-container" className="px-4">
         <section id="intro">
           <h1>slogan</h1>
           <InfoSlider />
