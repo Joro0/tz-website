@@ -8,6 +8,11 @@ import { useState } from "react";
 
 function IntroSection() {
   const [carPos, setCarPos] = useState(1);
+  const handleChangePos = (newPos: number) => {
+    console.log(carPos);
+    setCarPos(newPos);
+    console.log(carPos);
+  };
 
   const dataCarousel = [
     {
@@ -33,8 +38,11 @@ function IntroSection() {
   return (
     <section id="intro">
       <h1>AGREGADOS DE CALIDAD, OBRAS CON SOLIDEZ</h1>
-      <CarouselIntro data={dataCarousel} />
-      <CarouselButtons />
+      <CarouselIntro data={dataCarousel} pos={carPos} />
+      <CarouselButtons
+        qty={dataCarousel.length}
+        onChangePos={handleChangePos}
+      />
     </section>
   );
 }

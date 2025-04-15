@@ -7,12 +7,17 @@ type Props = {
     title: string;
     descp: string;
   }[];
+  pos: number;
 };
 
-function CarouselIntro({ data }: Props) {
+function CarouselIntro({ data, pos }: Props) {
   return (
     <div className="bg-gray-200 w-full overflow-hidden border-y-1 border-text-image/30 my-2">
-      <div className={`flex w-[${data.length * 100}%]`}>
+      <div
+        className={`flex w-[${data.length * 100}%] -translate-x-${
+          pos - 1
+        }/3 transform transition-transform duration-500 ease-in-out`}
+      >
         {data.map((info, i) => (
           <div key={i} className="flex flex-col flex-1">
             <div>{info.icon}</div>
