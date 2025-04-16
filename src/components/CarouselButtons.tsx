@@ -11,7 +11,7 @@ function CarouselButtons({ qty, onChangePos }: Props) {
       {Array.from({ length: qty }).map((_, i) => (
         <button
           key={i}
-          className="bg-amber-200 rounded-full w-3 h-3"
+          className="bg-amber-200 rounded-full w-2 h-2"
           onClick={() => onChangePos(i + 1)}
         ></button>
       ))}
