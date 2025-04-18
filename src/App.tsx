@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <header></header>
-      <main id="main-container" className="px-4">
+      <main id="main-container">
         <IntroSection />
         <section id="servicio"></section>
         <section id="datos"></section>

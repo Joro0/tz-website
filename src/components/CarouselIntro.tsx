@@ -1,4 +1,3 @@
-import "./CarouselIntro.css";
 import { ReactElement } from "react";
 
 type Props = {

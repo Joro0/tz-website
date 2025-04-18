@@ -3,13 +3,23 @@ import CarouselIntro from "../components/CarouselIntro";
 import IconQuestion from "../assets/icons/icon_question.svg?react";
 import IconMark from "../assets/icons/icon_mark.svg?react";
 import IconMap from "../assets/icons/icon_map.svg?react";
+import "./IntroSection.css";
 
 import { useState } from "react";
+import ImgFadeChange from "../components/ImgFadeChange";
 
 function IntroSection() {
   const [carPos, setCarPos] = useState(1);
+  const [carPrevPos, setCarPrevPos] = useState(1);
+  const [isAnimating, setIsAnimating] = useState(false);
+
   const handleChangePos = (newPos: number) => {
     setCarPos(newPos);
+    setIsAnimating(true);
+  };
+  const handlePrevPos = (prePos: number) => {
+    setCarPrevPos(prePos);
+    setIsAnimating(false);
   };
 
   const IMAGE_INTRO_PATH = "/images/";
@@ -39,17 +49,20 @@ function IntroSection() {
 
   return (
     <section id="intro" className="relative w-full overflow-hidden h-screen">
-      <div
-        className={`absolute inset-0 bg-cover bg-center -z-10`}
-        style={{
-          backgroundImage: `url('${dataCarousel[carPos - 1].img}')`,
-        }}
-      ></div>
+      <ImgFadeChange
+        carPos={carPos}
+        carPrevPos={carPrevPos}
+        imgDirs={dataCarousel.map((item) => item.img)}
+        animating={isAnimating}
+        onPrevPos={handlePrevPos}
+      />
       <h1>AGREGADOS DE CALIDAD, OBRAS CON SOLIDEZ</h1>
       <CarouselIntro data={dataCarousel} pos={carPos} />
       <CarouselButtons
         qty={dataCarousel.length}
+        actualPos={carPos}
         onChangePos={handleChangePos}
+        animating={isAnimating}
       />
     </section>
   );
