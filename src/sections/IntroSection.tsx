@@ -25,21 +25,21 @@ function IntroSection() {
   const IMAGE_INTRO_PATH = "/images/";
   const dataCarousel = [
     {
-      icon: <IconQuestion className="w-6 h-6" />,
+      icon: <IconQuestion className="w-7 h-7 text-highlight" />,
       title: "QUIÉNES SOMOS?",
       descp:
         "Empresa tacneña especializada en la producción y suministro de agregados en el sur del Perú.",
       img: `${IMAGE_INTRO_PATH}main_img_1.webp`,
     },
     {
-      icon: <IconMark className="w-6 h-6" />,
+      icon: <IconMark className="w-7 h-7 text-highlight" />,
       title: "EXPERIENCIA",
       descp:
         "Más de 60 años en el sector nos respaldan, brindando soluciones eficientes y confiables en agregados.",
       img: `${IMAGE_INTRO_PATH}main_img_2.webp`,
     },
     {
-      icon: <IconMap className="w-6 h-6" />,
+      icon: <IconMap className="w-7 h-7 text-highlight" />,
       title: "LOCACIÓN",
       descp:
         "Operamos desde Tacna, gestionando proyectos en Moquegua, Ilo, Nasca y otras localidades del sur.",
@@ -56,14 +56,20 @@ function IntroSection() {
         animating={isAnimating}
         onPrevPos={handlePrevPos}
       />
-      <h1>AGREGADOS DE CALIDAD, OBRAS CON SOLIDEZ</h1>
-      <CarouselIntro data={dataCarousel} pos={carPos} />
-      <CarouselButtons
-        qty={dataCarousel.length}
-        actualPos={carPos}
-        onChangePos={handleChangePos}
-        animating={isAnimating}
-      />
+      <div className="w-full h-full px-4 flex flex-col justify-center gap-24">
+        <h1 className="text-image leading-tight">
+          AGREGADOS DE CALIDAD, OBRAS CON SOLIDEZ
+        </h1>
+        <div className="flex flex-col gap-4">
+          <CarouselIntro data={dataCarousel} pos={carPos} />
+          <CarouselButtons
+            qty={dataCarousel.length}
+            actualPos={carPos}
+            onChangePos={handleChangePos}
+            animating={isAnimating}
+          />
+        </div>
+      </div>
     </section>
   );
 }

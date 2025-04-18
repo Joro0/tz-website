@@ -15,6 +15,10 @@ function ImgFadeChange({
 }: Props) {
   return (
     <>
+      {/* Mask Layer */}
+      <div className="absolute inset-0 bg-black opacity-35 -z-9"></div>
+
+      {/* Background Image Layer */}
       <div
         className={`absolute inset-0 bg-cover bg-center -z-10 ${
           animating ? "animate-(--animate-fade-and-scale)" : ""

@@ -14,19 +14,19 @@ function CarouselIntro({ data, pos }: Props) {
   const translateX = `-${(pos - 1) * (100 / data.length)}%`;
 
   return (
-    <div className="bg-gray-200 w-full overflow-hidden border-y-1 border-text-image/30 my-2">
+    <div className="w-full overflow-hidden border-y-2 border-image/40 py-10 min-h-60">
       <div
-        className="flex transform transition-transform duration-500 ease-in-out"
+        className="flex transform transition-transform duration-700 ease-in-out"
         style={{
           width: totalWidth,
           transform: `translateX(${translateX})`,
         }}
       >
         {data.map((info, i) => (
-          <div key={i} className="flex flex-col flex-1">
+          <div key={i} className="flex flex-col flex-1 gap-2">
             <div>{info.icon}</div>
-            <p className="font-bold">{info.title}</p>
-            <p>{info.descp}</p>
+            <p className="font-bold text-image">{info.title}</p>
+            <p className="text-image">{info.descp}</p>
           </div>
         ))}
       </div>
