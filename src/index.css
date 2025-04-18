@@ -28,7 +28,7 @@
   --font-h1: "Big Shoulders", sans-serif;
   --font-text: "Noto Sans", sans-serif;
 
-  --animate-fade-and-scale: fade-and-scale 0.7s ease-in-out;
+  --animate-fade-and-scale: fade-and-scale 1s ease-in-out;
   @keyframes fade-and-scale {
     0% {
       opacity: 0;

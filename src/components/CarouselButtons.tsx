@@ -11,7 +11,9 @@ function CarouselButtons({ qty, actualPos, onChangePos, animating }: Props) {
       {Array.from({ length: qty }).map((_, i) => (
         <button
           key={i}
-          className="bg-image/40 rounded-full w-2 h-2"
+          className={`${
+            actualPos === i + 1 ? "bg-image" : "bg-image/40"
+          } rounded-full w-2 h-2`}
           onClick={() => (actualPos === i + 1 ? null : onChangePos(i + 1))}
           disabled={animating}
         ></button>

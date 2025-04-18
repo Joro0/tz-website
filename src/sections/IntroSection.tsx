@@ -56,11 +56,15 @@ function IntroSection() {
         animating={isAnimating}
         onPrevPos={handlePrevPos}
       />
-      <div className="w-full h-full px-4 flex flex-col justify-center gap-24">
-        <h1 className="text-image leading-tight">
-          AGREGADOS DE CALIDAD, OBRAS CON SOLIDEZ
-        </h1>
-        <div className="flex flex-col gap-4">
+      <div className="w-full h-full px-4 flex flex-col justify-center">
+        <div className="flex flex-1/5"></div>
+        <div className="flex flex-2/5 justify-center flex-col">
+          <h1 className="flex text-image leading-tight">
+            AGREGADOS DE CALIDAD, OBRAS CON SOLIDEZ
+          </h1>
+        </div>
+
+        <div className="flex flex-col flex-2/5 justify-center gap-4">
           <CarouselIntro data={dataCarousel} pos={carPos} />
           <CarouselButtons
             qty={dataCarousel.length}
