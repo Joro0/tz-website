@@ -14,7 +14,7 @@ function CarouselIntro({ data, pos }: Props) {
   const translateX = `-${(pos - 1) * (100 / data.length)}%`;
 
   return (
-    <div className="w-full overflow-hidden border-y-2 border-image/40 py-10 min-h-60">
+    <div className="w-full overflow-hidden border-y-2 border-image/40 py-6 min-h-60">
       <div
         className="flex transform transition-transform duration-800 ease-in-out"
         style={{

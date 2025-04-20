@@ -7,8 +7,20 @@
     border: 0;
     box-sizing: border-box;
   }
+  body {
+    @apply bg-background;
+  }
   h1 {
     @apply text-6xl font-extrabold font-h1;
+  }
+  h2 {
+    @apply text-4xl font-extrabold font-h1;
+  }
+  h3 {
+    @apply text-3xl font-extrabold font-h1;
+  }
+  h4 {
+    @apply text-lg font-text font-bold;
   }
   p {
     @apply text-lg font-text font-medium;
@@ -16,10 +28,7 @@
 }
 
 @theme {
-  --color-background-main: #fefcf7;
-  --color-background-secondary: #6d7543;
-  --color-background-terciary: #2b2b2b;
-
+  --color-background: #fefcf7;
   --color-main: #2b2b2b;
   --color-image: #ffffff;
   --color-secondary: #6d7543;
@@ -28,7 +37,7 @@
   --font-h1: "Big Shoulders", sans-serif;
   --font-text: "Noto Sans", sans-serif;
 
-  --animate-fade-and-scale: fade-and-scale 1s ease-in-out;
+  --animate-fade-and-scale: fade-and-scale 0.7s ease-in-out;
   @keyframes fade-and-scale {
     0% {
       opacity: 0;
