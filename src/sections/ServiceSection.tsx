@@ -31,7 +31,7 @@ function ServiceSection() {
   ];
 
   return (
-    <section id="servicio" className="px-4">
+    <section id="servicio" className="px-4 my-15">
       <h4 className="my-2 text-secondary">Servicios</h4>
       <h2 className="mb-4 text-main">
         OFRECEMOS UN AMPLIO RANGO DE AGREGADOS DE CALIDAD

@@ -16,7 +16,7 @@ function ImgFadeChange({
   return (
     <>
       {/* Mask Layer */}
-      <div className="absolute inset-0 bg-black opacity-35 -z-9"></div>
+      <div className="absolute inset-0 bg-mask-intro opacity-65 -z-9"></div>
 
       {/* Background Image Layer */}
       <div

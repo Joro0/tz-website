@@ -12,6 +12,7 @@ function IntroSection() {
   const [carPrevPos, setCarPrevPos] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  //STATES
   const handleChangePos = (newPos: number) => {
     setCarPos(newPos);
     setIsAnimating(true);
@@ -21,10 +22,13 @@ function IntroSection() {
     setIsAnimating(false);
   };
 
+  //LOCAL DATA
   const IMAGE_INTRO_PATH = "/images/";
   const dataCarousel = [
     {
-      icon: <IconQuestion className="w-7 h-7 text-highlight" />,
+      icon: (
+        <IconQuestion className="w-7 h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 text-highlight" />
+      ),
       title: "QUIÉNES SOMOS?",
       descp:
         "Empresa tacneña especializada en la producción y suministro de agregados en el sur del Perú.",
@@ -55,15 +59,14 @@ function IntroSection() {
         animating={isAnimating}
         onPrevPos={handlePrevPos}
       />
-      <div className="w-full h-full px-4 flex flex-col justify-center">
+      <div className="w-full h-full px-4 md:px-8 lg:px-12 flex flex-col justify-center">
         <div className="flex flex-1/6"></div>
-        <div className="flex flex-2/6 justify-center flex-col">
-          <h1 className="flex text-image leading-tight">
-            AGREGADOS DE CALIDAD, OBRAS CON SOLIDEZ
-          </h1>
-        </div>
 
-        <div className="flex flex-col flex-3/6 justify-center gap-4">
+        <h1 className="flex flex-col justify-center flex-2/6 text-image leading-tight text-left md:w-4/5 xl:w-4/6">
+          AGREGADOS DE CALIDAD, OBRAS CON SOLIDEZ
+        </h1>
+
+        <div className="flex flex-col flex-3/6 justify-center gap-4 w-full items-start md:w-140 lg:w-180 xl:w-200">
           <CarouselIntro data={dataCarousel} pos={carPos} />
           <CarouselButtons
             qty={dataCarousel.length}

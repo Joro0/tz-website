@@ -23,10 +23,10 @@ function CarouselIntro({ data, pos }: Props) {
         }}
       >
         {data.map((info, i) => (
-          <div key={i} className="flex flex-col flex-1 gap-2">
+          <div key={i} className="flex flex-col flex-1 gap-3 md:gap-3">
             <div>{info.icon}</div>
-            <p className="font-bold text-image">{info.title}</p>
-            <p className="text-image">{info.descp}</p>
+            <p className="font-semibold text-image">{info.title}</p>
+            <p className="text-image font-light">{info.descp}</p>
           </div>
         ))}
       </div>
