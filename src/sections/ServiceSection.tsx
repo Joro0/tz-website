@@ -32,16 +32,17 @@ function ServiceSection() {
 
   return (
     <section id="servicio" className="px-4 md:px-8 lg:px-12 my-15">
-      <h4 className="my-4 md:my-5 lg:my-6 xl:my-7  text-secondary ">
-        SERVICIOS
-      </h4>
+      <h3>SERVICIOS</h3>
+
       <h1 className="text-main text-5xl md:text-6xl lg:text-7xl lg:w-5/6 xl:w-4/6 ">
         OFRECEMOS UN AMPLIO RANGO DE AGREGADOS DE CALIDAD
       </h1>
+
       <p className="my-8 md:my-10 lg:my-12 xl:my-14  text-main text-left lg:w-4/6 xl:w-3/6">
         Con maquinaria avanzada, flota de transporte y un equipo especializado,
         garantizamos producción eficiente y agregados de alta calidad.
       </p>
+
       <div className="flex flex-col flex-wrap justify-center gap-4 md:flex-row">
         {data.map((item, i) => (
           <div
@@ -50,7 +51,7 @@ function ServiceSection() {
             style={{ backgroundImage: `url('${item.img}')` }}
           >
             <div className="flex flex-col w-full p-2 md:p-4 justify-between md:w-70 md:h-95 md:py-6">
-              <h3 className="relative text-image">{item.title}</h3>
+              <h4 className="relative text-image">{item.title}</h4>
               <p className="relative text-left text-image font-light">
                 <span className="block md:hidden">{item.shortDescp}</span>
                 <span className="hidden md:block">{item.descp}</span>
@@ -59,6 +60,7 @@ function ServiceSection() {
           </div>
         ))}
       </div>
+
       <button className="flex flex-row items-center gap-3 ml-auto my-5 md:my-6 lg:my-7 xl:my-8 ">
         <IconArrowRight className="w-5 text-highlight stroke-3 inline" />
         <h4 className="font-h1">MÁS INFORMACIÓN</h4>

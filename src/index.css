@@ -19,12 +19,14 @@
     @apply text-4xl md:text-5xl lg:text-6xl;
   }
   h3 {
-    @apply font-extrabold font-h1;
-    @apply text-3xl md:text-4xl;
+    /* SECTIONS */
+    @apply font-text font-bold text-secondary;
+    @apply text-base md:text-lg lg:text-xl;
+    @apply my-4 md:my-5 lg:my-6 xl:my-7;
   }
   h4 {
-    @apply font-text font-bold;
-    @apply text-base md:text-lg lg:text-xl;
+    @apply font-extrabold font-h1;
+    @apply text-3xl md:text-4xl;
   }
   p {
     @apply font-text font-medium;
