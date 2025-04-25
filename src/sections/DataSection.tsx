@@ -6,6 +6,16 @@ function DataSection() {
     { value: "15+", descp: "Proyectos completados" },
   ];
 
+  const isLeftBorder = (index: number) => {
+    // removing specific borders when divs in rows
+    if (index % 3 === 0) {
+      if (index === 0) return "border-l-2 md:border-l-0";
+      return "border-l-2 md:border-l-0 xl:border-l-2";
+    } else {
+      return "border-l-2";
+    }
+  };
+
   return (
     <section id="datos" className="px-4 md:px-8 lg:px-12 my-15">
       <div className="flex flex-col xl:flex-row">
@@ -16,11 +26,13 @@ function DataSection() {
         </h2>
       </div>
 
-      <div className="my-12 md:my-26 flex flex-col gap-y-4 md:flex-row md:flex-wrap">
+      <div className="my-12 md:my-26 xl:my-36 flex flex-col gap-y-4 md:gap-y-20 lg:gap-y-30 md:flex-row md:flex-wrap">
         {data.map((item, i) => (
           <div
             key={i}
-            className="px-4 md:px-12 xl:px-14 border-l-2 border-secondary/30 flex flex-col gap-4 md:text-center md:w-1/3 xl:w-1/4"
+            className={`px-4 md:px-12 xl:px-14 border-secondary/30 ${isLeftBorder(
+              i
+            )} flex flex-col gap-4 md:text-center md:w-1/3 xl:w-1/4`}
           >
             <h2 className="text-secondary font-bold font-text">{item.value}</h2>
             <p>{item.descp}</p>
