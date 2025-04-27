@@ -1,4 +1,5 @@
 import "./App.css";
+import ClientSection from "./sections/ClientSection";
 import DataSection from "./sections/DataSection";
 import IntroSection from "./sections/IntroSection";
 import ServiceSection from "./sections/ServiceSection";
@@ -11,7 +12,7 @@ function App() {
         <IntroSection />
         <ServiceSection />
         <DataSection />
-        <section id="clientes"></section>
+        <ClientSection />
         <section id="proyectos"></section>
         <section id="galeria"></section>
       </main>
