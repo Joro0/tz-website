@@ -6,48 +6,50 @@ import LogoMinsur from "../assets/clients/minsur.svg?react";
 import LogoUnicon from "../assets/clients/unicon.svg?react";
 import LogoYura from "../assets/clients/yura.svg?react";
 import LogoFdaniel from "../assets/clients/fdaniel.svg?react";
+import CarouselInfinite from "../components/CarouselInfinite";
 
 function ClientSection() {
   const data = [
     {
       name: "Southern Peru",
-      logo: <LogoSouthern className="text-highlight" />,
+      svgLogo: <LogoSouthern className="text-highlight" />,
     },
     {
       name: "Anglo América",
-      logo: <LogoAnglo className="text-highlight" />,
+      svgLogo: <LogoAnglo className="text-highlight" />,
     },
     {
       name: "Cosapi",
-      logo: <LogoCosapi className="text-highlight" />,
+      svgLogo: <LogoCosapi className="text-highlight" />,
     },
     {
       name: "Graña y Montero",
-      logo: <LogoGym className="text-highlight" />,
+      svgLogo: <LogoGym className="text-highlight" />,
     },
     {
       name: "Minsur",
-      logo: <LogoMinsur className="text-highlight" />,
+      svgLogo: <LogoMinsur className="text-highlight" />,
     },
     {
       name: "Unicon",
-      logo: <LogoUnicon className="text-highlight" />,
+      svgLogo: <LogoUnicon className="text-highlight" />,
     },
     {
       name: "Yura",
-      logo: <LogoYura className="text-highlight" />,
+      svgLogo: <LogoYura className="text-highlight" />,
     },
     {
       name: "Fluor Daniel",
-      logo: <LogoFdaniel className="text-highlight" />,
+      svgLogo: <LogoFdaniel className="text-highlight" />,
     },
   ];
 
   return (
     <section id="clientes" className="w-full">
       <div></div>
-      <div></div>
-      {data[7].logo}
+      <h2>CLIENTS</h2>
+      <hr />
+      <CarouselInfinite data={data} />
     </section>
   );
 }

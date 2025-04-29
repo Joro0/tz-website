@@ -47,7 +47,10 @@
   --font-h1: "Big Shoulders", sans-serif;
   --font-text: "Noto Sans", sans-serif;
 
+  /* ANIMATIONS */
   --animate-fade-and-scale: fade-and-scale 0.7s ease-in-out;
+  --animate-scroll-x-infinite: scroll-x-inifite 10s linear infinite;
+
   @keyframes fade-and-scale {
     0% {
       opacity: 0;
@@ -56,6 +59,14 @@
     100% {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+  @keyframes scroll-x-inifite {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50% - 1.25rem / 2));
     }
   }
 }
