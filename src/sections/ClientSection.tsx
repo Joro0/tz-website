@@ -12,35 +12,35 @@ function ClientSection() {
   const data = [
     {
       name: "Southern Peru",
-      svgLogo: <LogoSouthern className="text-highlight" />,
+      svgLogo: <LogoSouthern className="text-main" />,
     },
     {
       name: "Anglo América",
-      svgLogo: <LogoAnglo className="text-highlight" />,
+      svgLogo: <LogoAnglo className="text-main" />,
     },
     {
       name: "Cosapi",
-      svgLogo: <LogoCosapi className="text-highlight" />,
+      svgLogo: <LogoCosapi className="text-main" />,
     },
     {
       name: "Graña y Montero",
-      svgLogo: <LogoGym className="text-highlight" />,
+      svgLogo: <LogoGym className="text-main" />,
     },
     {
       name: "Minsur",
-      svgLogo: <LogoMinsur className="text-highlight" />,
+      svgLogo: <LogoMinsur className="text-main" />,
     },
     {
       name: "Unicon",
-      svgLogo: <LogoUnicon className="text-highlight" />,
+      svgLogo: <LogoUnicon className="text-main" />,
     },
     {
       name: "Yura",
-      svgLogo: <LogoYura className="text-highlight" />,
+      svgLogo: <LogoYura className="text-main" />,
     },
     {
       name: "Fluor Daniel",
-      svgLogo: <LogoFdaniel className="text-highlight" />,
+      svgLogo: <LogoFdaniel className="text-main" />,
     },
   ];
 

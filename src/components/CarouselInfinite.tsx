@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 
 type Props = {
   data: {
@@ -8,14 +8,20 @@ type Props = {
 };
 
 function CarouselInfinite({ data }: Props) {
+  const [isPaused, setIsPaused] = useState(false);
+
   const copies = 2; // Repeated logo groups
+  const spaceLogo = 5; // Space between logos
 
   // Generate the repeated logos
   const repeatedLogos = [];
   for (let i = 0; i < copies; i++) {
     repeatedLogos.push(
       ...data.map((client, index) => (
-        <div key={`${i}-${index}`} className="w-10 flex-shrink-0">
+        <div
+          key={`${i}-${index}`}
+          className={`w-10 flex-shrink-0 mr-${spaceLogo}`}
+        >
           {client.svgLogo}
         </div>
       ))
@@ -23,8 +29,15 @@ function CarouselInfinite({ data }: Props) {
   }
 
   return (
-    <div className="w-full overflow-x-hidden">
-      <div className="w-fit flex items-center gap-5 animate-(--animate-scroll-x-infinite)">
+    <div
+      className="w-full overflow-x-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <div
+        className="w-fit flex items-center animate-(--animate-scroll-x-infinite)"
+        style={{ animationPlayState: isPaused ? "paused" : "running" }}
+      >
         {repeatedLogos}
       </div>
     </div>
