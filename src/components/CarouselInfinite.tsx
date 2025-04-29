@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 
 type Props = {
   data: {
@@ -8,8 +8,6 @@ type Props = {
 };
 
 function CarouselInfinite({ data }: Props) {
-  const [isPaused, setIsPaused] = useState(false);
-
   const copies = 2; // Repeated logo groups
   const spaceLogo = 5; // Space between logos
 
@@ -29,15 +27,8 @@ function CarouselInfinite({ data }: Props) {
   }
 
   return (
-    <div
-      className="w-full overflow-x-hidden"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      <div
-        className="w-fit flex items-center animate-(--animate-scroll-x-infinite)"
-        style={{ animationPlayState: isPaused ? "paused" : "running" }}
-      >
+    <div className="w-full overflow-x-hidden">
+      <div className="w-fit flex items-center animate-(--animate-scroll-x-infinite) hover:pause-animation">
         {repeatedLogos}
       </div>
     </div>
