@@ -13,6 +13,9 @@ type Props = {
 function CarouselInfinite({ data, wLogo, gLogo, rLogo }: Props) {
   const copies = rLogo; // Repeated logo groups
 
+  // Tailwind scale calculation for width and margin
+  const calculateTailwindScale = (value: number) => `${value * 0.25}rem`;
+
   // Generate logos and repeat them
   const repeatedLogos = [];
   for (let i = 0; i < copies; i++) {
@@ -22,8 +25,8 @@ function CarouselInfinite({ data, wLogo, gLogo, rLogo }: Props) {
           key={`${i}-${index}`}
           className="flex-shrink-0 overflow-hidden"
           style={{
-            width: `${wLogo}rem`, // width logo
-            marginRight: `${gLogo}rem`, // gap logos
+            width: calculateTailwindScale(wLogo), // Calculate width to match Tailwind
+            marginRight: calculateTailwindScale(gLogo), // Calculate margin-right to match Tailwind
           }}
         >
           {client.svgLogo}
