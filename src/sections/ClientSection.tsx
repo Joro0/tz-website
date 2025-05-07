@@ -49,7 +49,7 @@ function ClientSection() {
       <div></div>
       <h2>CLIENTS</h2>
       <hr />
-      <CarouselInfinite data={data} />
+      <CarouselInfinite data={data} wLogo={15} gLogo={10} rLogo={2} />
     </section>
   );
 }

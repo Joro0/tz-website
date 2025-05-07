@@ -5,21 +5,24 @@ type Props = {
     name: string;
     svgLogo: ReactElement;
   }[];
+  wLogo: number;
+  gLogo: number;
+  rLogo: number;
 };
 
-function CarouselInfinite({ data }: Props) {
-  const copies = 2; // Repeated logo groups
-  const spaceLogo = 5; // Space between logos
+function CarouselInfinite({ data, wLogo, gLogo, rLogo }: Props) {
+  const copies = rLogo; // Repeated logo groups
+  const widthLogo = `w-${wLogo}`; //"w-15"; // Width of each logo (height auto)
+  const gapLogo = `mr-${gLogo}`; //"mr-10"; // Space between logos
 
-  // Generate the repeated logos
+  const propsLogo = `${widthLogo} flex-shrink-0 ${gapLogo} overflow-hidden`;
+
+  // Generate logos and repeat them
   const repeatedLogos = [];
   for (let i = 0; i < copies; i++) {
     repeatedLogos.push(
       ...data.map((client, index) => (
-        <div
-          key={`${i}-${index}`}
-          className={`w-10 flex-shrink-0 mr-${spaceLogo}`}
-        >
+        <div key={`${i}-${index}`} className={propsLogo}>
           {client.svgLogo}
         </div>
       ))

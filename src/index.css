@@ -19,7 +19,6 @@
     @apply text-4xl md:text-5xl lg:text-6xl;
   }
   h3 {
-    /* SECTIONS */
     @apply font-text font-bold text-secondary;
     @apply text-base md:text-lg lg:text-xl;
     @apply my-4 md:my-5 lg:my-6 xl:my-7;
@@ -54,23 +53,23 @@
   /* ANIMATIONS */
   --animate-fade-and-scale: fade-and-scale 0.7s ease-in-out;
   --animate-scroll-x-infinite: scroll-x-inifite 10s linear infinite;
+}
 
-  @keyframes fade-and-scale {
-    0% {
-      opacity: 0;
-      transform: scale(1.2);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
+@keyframes fade-and-scale {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
   }
-  @keyframes scroll-x-inifite {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes scroll-x-inifite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
