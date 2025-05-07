@@ -12,17 +12,20 @@ type Props = {
 
 function CarouselInfinite({ data, wLogo, gLogo, rLogo }: Props) {
   const copies = rLogo; // Repeated logo groups
-  const widthLogo = `w-${wLogo}`; //"w-15"; // Width of each logo (height auto)
-  const gapLogo = `mr-${gLogo}`; //"mr-10"; // Space between logos
-
-  const propsLogo = `${widthLogo} flex-shrink-0 ${gapLogo} overflow-hidden`;
 
   // Generate logos and repeat them
   const repeatedLogos = [];
   for (let i = 0; i < copies; i++) {
     repeatedLogos.push(
       ...data.map((client, index) => (
-        <div key={`${i}-${index}`} className={propsLogo}>
+        <div
+          key={`${i}-${index}`}
+          className="flex-shrink-0 overflow-hidden"
+          style={{
+            width: `${wLogo}rem`, // width logo
+            marginRight: `${gLogo}rem`, // gap logos
+          }}
+        >
           {client.svgLogo}
         </div>
       ))

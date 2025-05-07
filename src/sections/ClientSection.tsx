@@ -47,9 +47,8 @@ function ClientSection() {
   return (
     <section id="clientes" className="w-full">
       <div></div>
-      <h2>CLIENTS</h2>
-      <hr />
-      <CarouselInfinite data={data} wLogo={15} gLogo={10} rLogo={2} />
+      <h3 className="text-main text-center">CLIENTS</h3>
+      <CarouselInfinite data={data} wLogo={3.5} gLogo={2.2} rLogo={2} />
     </section>
   );
 }
