@@ -52,7 +52,7 @@
 
   /* ANIMATIONS */
   --animate-fade-and-scale: fade-and-scale 0.7s ease-in-out;
-  --animate-scroll-x-infinite: scroll-x-inifite 10s linear infinite;
+  --animate-scroll-x-infinite: scroll-x-inifite 30s linear infinite;
 }
 
 @keyframes fade-and-scale {
