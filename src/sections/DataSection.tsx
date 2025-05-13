@@ -17,7 +17,7 @@ function DataSection() {
   };
 
   return (
-    <section id="datos" className="px-4 md:px-8 lg:px-12 my-15">
+    <section id="dataSection" className="px-4 md:px-8 lg:px-12 my-15">
       <div className="flex flex-col xl:flex-row">
         <h3 className="flex xl:flex-2/5">DATOS IMPACTANTES</h3>
         <h2 className="flex xl:flex-2/5">

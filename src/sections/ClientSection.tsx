@@ -55,7 +55,7 @@ function ClientSection() {
         <LinePattern className="w-1/2 opacity-15 text-image" />
       </div>
       <h3 className="text-highlight text-center mt-0">CLIENTES</h3>
-      <CarouselInfinite data={data} wLogo={14} gLogo={8} rLogo={2} />
+      <CarouselInfinite data={data} wLogo={16} gLogo={9} rLogo={2} />
     </section>
   );
 }

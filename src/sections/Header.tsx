@@ -24,9 +24,7 @@ function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50  border-b-1  transition-colors duration-500 ${
-        isScrolled
-          ? "bg-background border-main/20"
-          : "bg-background-0 border-image/40"
+        isScrolled ? "bg-background border-main/20" : " border-image/40"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between">

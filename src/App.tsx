@@ -14,8 +14,8 @@ function App() {
         <IntroSection />
         <ServiceSection />
         <DataSection />
-        <ClientSection />
         <ProjectSection />
+        <ClientSection />
         <section id="galeria"></section>
       </main>
       <footer></footer>
