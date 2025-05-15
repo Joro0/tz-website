@@ -1,4 +1,4 @@
-import IconArrowRight from "../assets/icons/icon_right_arrow.svg?react";
+import ArrowButton from "../components/ArrowButton";
 
 function ServiceSection() {
   const IMG_SERVICE_PATH = "/images/";
@@ -61,10 +61,7 @@ function ServiceSection() {
         ))}
       </div>
 
-      <button className="flex flex-row items-center gap-3 ml-auto my-5 md:my-6 lg:my-7 xl:my-8 ">
-        <IconArrowRight className="w-5 text-highlight stroke-3 inline" />
-        <h4 className="font-h1">MÁS INFORMACIÓN</h4>
-      </button>
+      <ArrowButton text="MÁS INFORMACIÓN" />
     </section>
   );
 }

@@ -1,3 +1,5 @@
+import ArrowButton from "../components/ArrowButton";
+
 function ProjectSection() {
   const projectData = [
     {
@@ -40,6 +42,8 @@ function ProjectSection() {
           </div>
         ))}
       </div>
+
+      <ArrowButton text="OTROS PROYECTOS" />
     </section>
   );
 }
