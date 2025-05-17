@@ -1,17 +1,17 @@
 import { useState, useRef, useEffect } from "react";
 
 function GalerySection() {
-  const [selected, setSelected] = useState("Trabajadores");
+  const [selected, setSelected] = useState("Producción");
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const data = [
     {
-      title: "Trabajadores",
+      title: "Producción",
       images: [
-        "/images/gal_t1.webp",
-        "/images/gal_t2.webp",
-        "/images/gal_t3.webp",
-        "/images/gal_t4.webp",
+        "/images/gal_p1.webp",
+        "/images/gal_p2.webp",
+        "/images/gal_p3.webp",
+        "/images/gal_p4.webp",
       ],
     },
     {
@@ -25,7 +25,6 @@ function GalerySection() {
     },
   ];
 
-  // Reset scroll position when selected changes
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollLeft = 0;
@@ -33,12 +32,12 @@ function GalerySection() {
   }, [selected]);
 
   return (
-    <section id="galeria" className="px-4 md:px-8 lg:px-12 my-15">
+    <section id="galeria" className="pl-4 md:pl-8 lg:pl-12 my-15 ">
       <h3>GALERÍA</h3>
       <div className="flex flex-row gap-4">
-        {data.map((item, i) => (
+        {data.map((item) => (
           <button
-            key={i}
+            key={item.title}
             className={`py-2 px-4 rounded-3xl font-text text-base transition-colors ${
               selected === item.title
                 ? "bg-main text-image"
@@ -54,16 +53,17 @@ function GalerySection() {
       <hr className="my-4 border-t-1 border-secondary/40" />
       <div
         ref={scrollRef}
-        className="flex flex-row gap-4 overflow-x-auto flex-nowrap hide-scrollbar"
+        className="relative w-full flex flex-row gap-4 overflow-x-auto flex-nowrap hide-scrollbar snap-x snap-mandatory"
       >
         {data
           .find((item) => item.title === selected)
-          ?.images.map((img, idx) => (
+          ?.images.map((img) => (
             <img
-              key={idx}
+              key={img}
               src={img}
-              alt={selected + " " + (idx + 1)}
-              className="w-40 h-40 object-cover rounded-xl shadow"
+              alt={selected}
+              loading="lazy"
+              className="w-5/6 aspect-[4/5] object-cover shadow snap-start rounded-xl"
             />
           ))}
       </div>
