@@ -1,6 +1,7 @@
 import "./App.css";
 import ClientSection from "./sections/ClientSection";
 import DataSection from "./sections/DataSection";
+import Footer from "./sections/Footer";
 import GalerySection from "./sections/GalerySection";
 import Header from "./sections/Header";
 import IntroSection from "./sections/IntroSection";
@@ -19,7 +20,7 @@ function App() {
         <ClientSection />
         <GalerySection />
       </main>
-      <footer></footer>
+      <Footer />
     </>
   );
 }

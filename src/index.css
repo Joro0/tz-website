@@ -19,11 +19,11 @@
     @apply bg-background;
   }
   h1 {
-    @apply font-extrabold font-h1;
+    @apply font-extrabold font-h1 text-main;
     @apply text-6xl md:text-7xl lg:text-8xl;
   }
   h2 {
-    @apply font-extrabold font-h1;
+    @apply font-extrabold font-h1 text-main;
     @apply text-4xl md:text-5xl lg:text-6xl;
   }
   h3 {
@@ -32,7 +32,7 @@
     @apply my-4 md:my-5 lg:my-6 xl:my-7;
   }
   h4 {
-    @apply font-extrabold font-h1;
+    @apply font-extrabold font-h1 text-main;
     @apply text-3xl md:text-4xl;
   }
   p {
