@@ -1,6 +1,12 @@
+import LinePattern from "../assets/patterns/line_pattern.svg?react";
+
 function Footer() {
   return (
-    <footer className="px-4 md:px-8 lg:px-12 pt-12 pb-8 bg-main flex flex-col gap-24">
+    <footer className="relative px-4 md:px-8 lg:px-12 pt-12 pb-8 bg-main flex flex-col gap-24">
+      <div className="absolute w-full z-0 top-0 right-0 mask-b-from-20% mask-b-to-80%">
+        <LinePattern className="opacity-15 text-image -scale-x-100" />
+      </div>
+
       <div>
         <h1 className="text-image">CONTÁCTANOS HOY!</h1>
         <p className="text-image my-8 text-xl md:text-2xl lg:text-3xl">

@@ -28,8 +28,8 @@
   }
   h3 {
     @apply font-text font-bold text-secondary;
-    @apply text-base md:text-lg lg:text-xl;
-    @apply my-4 md:my-5 lg:my-6 xl:my-7;
+    @apply text-lg md:text-xl lg:text-2xl;
+    @apply my-6 md:my-7 lg:my-8 xl:my-9;
   }
   h4 {
     @apply font-extrabold font-h1 text-main;
