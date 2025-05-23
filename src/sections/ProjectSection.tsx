@@ -22,11 +22,11 @@ function ProjectSection() {
     <section id="projectSection" className="px-4 md:px-8 lg:px-12 my-15">
       <h3>PROYECTOS DESTACADOS</h3>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 md:flex-row lg:gap-6 xl:gap-8">
         {projectData.map((project, index) => (
           <div
             key={index}
-            className={`w-full h-77 gap-0.5 flex flex-col justify-end py-2 px-2 bg-cover bg-center`}
+            className={`w-full h-77 gap-0.5 flex flex-col justify-end py-2 px-2 bg-cover bg-center md:aspect-[5/5] lg:aspect-[7/5] md:h-auto`}
             style={{ backgroundImage: `url(${project.imageUrl})` }}
           >
             <div className="bg-white/60 backdrop-blur-xs px-4 py-3">

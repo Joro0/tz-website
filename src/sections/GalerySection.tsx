@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import GalleryTabs from "../components/GalleryTabs";
 
 function GalerySection() {
   const [selected, setSelected] = useState("Producción");
@@ -25,6 +26,8 @@ function GalerySection() {
     },
   ];
 
+  const handleSelect = (title: string) => setSelected(title);
+
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollLeft = 0;
@@ -35,19 +38,11 @@ function GalerySection() {
     <section id="galeria" className="pl-4 md:pl-8 lg:pl-12 my-15 ">
       <h3>GALERÍA</h3>
       <div className="flex flex-row gap-4">
-        {data.map((item) => (
-          <button
-            key={item.title}
-            className={`py-2 px-4 rounded-3xl font-text text-base transition-colors ${
-              selected === item.title
-                ? "bg-main text-image"
-                : "border-2 border-main text-main bg-transparent"
-            }`}
-            onClick={() => setSelected(item.title)}
-          >
-            {item.title}
-          </button>
-        ))}
+        <GalleryTabs
+          tabTitles={data.map((item) => item.title)}
+          selectedTab={selected}
+          onSelect={handleSelect}
+        />
       </div>
 
       <hr className="my-4 border-t-1 border-secondary/40" />
@@ -63,7 +58,7 @@ function GalerySection() {
               src={img}
               alt={selected}
               loading="lazy"
-              className="w-5/6 aspect-[4/5] object-cover shadow snap-start rounded-xl"
+              className="w-5/6 aspect-[9/10] object-cover shadow snap-start rounded-xl md:w-4/9 lg:w-6/12"
             />
           ))}
       </div>
