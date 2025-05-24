@@ -20,7 +20,7 @@ function GalleryTabs({ tabTitles, selectedTab, onSelect }: Props) {
       {tabTitles.map((title) => (
         <button
           key={title}
-          className={`py-2 px-4 rounded-3xl font-text text-base transition-colors ${
+          className={`w-fit py-2 px-4 rounded-3xl font-text text-base transition-colors ${
             selectedTab === title
               ? "bg-main text-image"
               : "border-2 border-main text-main bg-transparent"
