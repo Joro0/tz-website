@@ -3,9 +3,14 @@ import GalleryTabs from "../components/GalleryTabs";
 import GalleryImages from "../components/GalleryImages";
 
 function GalerySection() {
+  // STATES
   const [selected, setSelected] = useState("Producción");
+  const [pendingTab, setPendingTab] = useState<string | null>(null);
+  const [fade, setFade] = useState(true);
+  // REFS
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  // IMAGE DATA
   const data = [
     {
       title: "Producción",
@@ -27,7 +32,24 @@ function GalerySection() {
     },
   ];
 
-  const handleSelect = (title: string) => setSelected(title);
+  // HANDLERS
+  const handleSelect = (title: string) => {
+    if (title !== selected) {
+      setFade(false);
+      setPendingTab(title);
+    }
+  };
+
+  useEffect(() => {
+    if (!fade && pendingTab) {
+      const timeout = setTimeout(() => {
+        setSelected(pendingTab);
+        setFade(true);
+        setPendingTab(null);
+      }, 400);
+      return () => clearTimeout(timeout);
+    }
+  }, [fade]);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -36,7 +58,7 @@ function GalerySection() {
   }, [selected]);
 
   return (
-    <section id="galeria" className="pl-4 md:pl-8 lg:pl-12 my-15 ">
+    <section id="galeria" className="pl-4 md:px-8 lg:px-12 my-15">
       <h3>GALERÍA</h3>
 
       <div
@@ -51,15 +73,36 @@ function GalerySection() {
           />
         </div>
 
-        <div
-          ref={scrollRef}
-          className="py-6 xl:ml-6 relative w-full xl:basis-[80%] flex flex-row gap-4 overflow-x-auto 
-          flex-nowrap hide-scrollbar snap-x snap-mandatory "
-        >
-          <GalleryImages
-            images={data.find((item) => item.title === selected)?.images || []}
-            alt={selected}
-          />
+        <div className="relative xl:ml-6 w-full">
+          <div
+            ref={scrollRef}
+            className={`py-6 relative w-full xl:basis-[80%] flex flex-row gap-4 overflow-x-auto 
+          flex-nowrap hide-scrollbar snap-x snap-mandatory transition-opacity duration-400 ease-in-out ${
+            fade ? "opacity-100" : "opacity-0"
+          }`}
+          >
+            <GalleryImages
+              images={
+                data.find((item) => item.title === selected)?.images || []
+              }
+              alt={selected}
+            />
+          </div>
+
+          <div
+            ref={scrollRef}
+            className={`absolute top-0 left-0 py-6 w-full xl:basis-[80%] flex flex-row gap-4 overflow-x-auto 
+          flex-nowrap hide-scrollbar snap-x snap-mandatory transition-opacity duration-400 ease-in-out ${
+            fade ? "opacity-100" : "opacity-0"
+          }`}
+          >
+            <GalleryImages
+              images={
+                data.find((item) => item.title === selected)?.images || []
+              }
+              alt={selected}
+            />
+          </div>
         </div>
       </div>
     </section>
